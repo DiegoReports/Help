@@ -125,7 +125,7 @@ header .nav .hamburguer::before {
 
 .banner {
   padding: 50px 100px 100px;
-  min-height: 580px;
+  min-height: 650px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
