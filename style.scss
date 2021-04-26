@@ -1,0 +1,277 @@
+:root {
+  --white: #fbfbfb;
+  --dark: #232323;
+  --dark-light: #353535;
+  --red: #eb1848;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: var(--dark);
+}
+header {
+
+  .nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px;
+    z-index: 100;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 1em;
+    }
+
+    h1:first-letter {
+      color: var(--red);
+      font-size: 2em;
+    }
+
+    .logo {
+      position: relative;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 10px 0;
+
+      li {
+        list-style: none;
+        margin: 0 10px;
+
+        a {
+          color: var(--white);
+          text-decoration: none;
+          font-weight: 500;
+          letter-spacing: 1px;
+          transition: 0.5s ease;
+
+          &:hover {
+            color: var(--red);
+          }
+        }
+      }
+    }
+
+    .hamburguer {
+      width: 40px;
+      height: 40px;
+      right: -20%;
+
+      background: var(--dark);
+      border-radius: 10%;
+      border: 0;
+
+      position: relative;
+      cursor: pointer;
+
+      display: none;
+    }
+
+    .hamburguer::after {
+      content: "";
+
+      width: 70%;
+      height: 5px;
+      position: absolute;
+      top: 30%;
+      left: 15%;
+      border-radius: 20px;
+
+      background: var(--white);
+
+      transition: 1s ease;
+    }
+
+    .hamburguer::before {
+      content: "";
+
+      width: 40%;
+      height: 5px;
+      position: absolute;
+      top: 60%;
+      left: 45%;
+      border-radius: 20px;
+
+      background: var(--white);
+
+      transition: 1s ease;
+    }
+  }
+}
+
+.banner {
+  padding: 50px 100px 100px;
+  min-height: 580px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .content {
+    max-width: 320px;
+    margin-top: 20px;
+    h2 {
+      font-size: 1em;
+      font-weight: 100;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: var(--white);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: var(--white);
+      font-size: 1.2em;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: inline-block;
+      background: var(--red);
+      color: var(--dark);
+      padding: 9px 35px;
+      text-transform: uppercase;
+      font-size: 1.2em;
+      text-decoration: none;
+
+      margin-top: 10px;
+
+      transition: 0.2s;
+
+      &:hover {
+        filter: brightness(90%);
+        color: var(--white);
+      }
+    }
+  }
+
+  .image {
+    max-width: 50%;
+    margin-left: 20px;
+  }
+
+  .commits {
+    display: none;
+  }
+}
+
+footer {
+  width: 100%;
+  border-top: 1px solid var(--dark-light);
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  img {
+    padding: 0.5em;
+    margin-top: 2px;
+  }
+  img:first-child {
+    margin-left: 20px;
+  }
+
+  img:last-child {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 870px) {
+  .image {
+    display: none;
+  }
+
+  .banner {
+    margin-top: 50px;
+  }
+
+  .banner .commits {
+    display: block;
+    margin-top: 5px;
+  }
+
+  header {
+    .nav {
+      .hamburguer {
+        display: block;
+        z-index: 100;
+        right: -15%;
+      }
+
+      .hamburguer.active::after {
+        transform: rotate(225deg);
+  
+        width: 70%;
+        height: 5px;
+  
+        top: 45%;
+        left: 15%;
+      }
+  
+      .hamburguer.active::before {
+        transform: rotate(-225deg);
+  
+        width: 70%;
+        height: 5px;
+  
+        top: 45%;
+        left: 15%;
+      }
+
+      .navigation {
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 100vh;
+        margin: 0;
+        background: var(--dark-light);
+
+        width: 100%;
+        max-width: 400px;
+
+        flex-direction: column;
+        align-items: center;
+
+        transition: 0.5s ease;
+
+        li {
+          padding: 20px 20px;
+
+          a {
+            font-size: 2em;
+            font-weight: 100;
+          }
+        }
+      }
+    }
+    .navigation.active {
+      right: 0;
+    }
+  }
+}

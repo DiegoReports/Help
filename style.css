@@ -1,0 +1,285 @@
+:root {
+  --white: #fbfbfb;
+  --dark: #232323;
+  --dark-light: #353535;
+  --red: #eb1848;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: var(--dark);
+}
+
+header .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 100px;
+  z-index: 100;
+}
+
+header .nav h1 {
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+header .nav h1:first-letter {
+  color: var(--red);
+  font-size: 2em;
+}
+
+header .nav .logo {
+  position: relative;
+  font-size: 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header .nav .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+header .nav .navigation li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+header .nav .navigation li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+header .nav .navigation li a:hover {
+  color: var(--red);
+}
+
+header .nav .hamburguer {
+  width: 40px;
+  height: 40px;
+  right: -20%;
+  background: var(--dark);
+  border-radius: 10%;
+  border: 0;
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+
+header .nav .hamburguer::after {
+  content: "";
+  width: 70%;
+  height: 5px;
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  border-radius: 20px;
+  background: var(--white);
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+header .nav .hamburguer::before {
+  content: "";
+  width: 40%;
+  height: 5px;
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  border-radius: 20px;
+  background: var(--white);
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.banner {
+  padding: 50px 100px 100px;
+  min-height: 580px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner .content {
+  max-width: 320px;
+  margin-top: 20px;
+}
+
+.banner .content h2 {
+  font-size: 1em;
+  font-weight: 100;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+.banner .content h1 {
+  font-size: 3em;
+  color: var(--white);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.banner .content p {
+  color: var(--white);
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.banner .content a {
+  display: inline-block;
+  background: var(--red);
+  color: var(--dark);
+  padding: 9px 35px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  text-decoration: none;
+  margin-top: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.banner .content a:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  color: var(--white);
+}
+
+.banner .image {
+  max-width: 50%;
+  margin-left: 20px;
+}
+
+.banner .commits {
+  display: none;
+}
+
+footer {
+  width: 100%;
+  border-top: 1px solid var(--dark-light);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer img {
+  padding: 0.5em;
+  margin-top: 2px;
+}
+
+footer img:first-child {
+  margin-left: 20px;
+}
+
+footer img:last-child {
+  margin-right: 20px;
+}
+
+@media (max-width: 870px) {
+  .image {
+    display: none;
+  }
+  .banner {
+    margin-top: 50px;
+  }
+  .banner .commits {
+    display: block;
+    margin-top: 5px;
+  }
+  header .nav .hamburguer {
+    display: block;
+    z-index: 100;
+    right: -15%;
+  }
+  header .nav .hamburguer.active::after {
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+    width: 70%;
+    height: 5px;
+    top: 45%;
+    left: 15%;
+  }
+  header .nav .hamburguer.active::before {
+    -webkit-transform: rotate(-225deg);
+            transform: rotate(-225deg);
+    width: 70%;
+    height: 5px;
+    top: 45%;
+    left: 15%;
+  }
+  header .nav .navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    margin: 0;
+    background: var(--dark-light);
+    width: 100%;
+    max-width: 400px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+  }
+  header .nav .navigation li {
+    padding: 20px 20px;
+  }
+  header .nav .navigation li a {
+    font-size: 2em;
+    font-weight: 100;
+  }
+  header .navigation.active {
+    right: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
