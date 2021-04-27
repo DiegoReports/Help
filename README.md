@@ -24,7 +24,9 @@ O layout foi disponibilizado pelo <a href="https://www.linkedin.com/in/andrei-mu
 MIT
 
 <br>
-===
+
+---
+<br>
 <p align=center>
 Desenvolvido por <a href="https://www.linkedin.com/in/diego-henrique-sg/"><img alt="LinkedIn" align=center src="https://img.shields.io/badge/Diego-Henrique-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 </p>
